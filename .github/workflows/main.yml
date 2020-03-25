@@ -1,0 +1,35 @@
+name: Continuous Delivery
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install the CF CLI
+        run: |
+          wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
+          echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
+          sudo apt-get update
+          sudo apt-get install -y cf-cli
+
+      - uses: actions/checkout@v1
+      - name: 'Setup Node'
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - run: npm install
+
+      - name: Deploy
+        env:
+          CF_USERNAME: ${{ secrets.CF_USERNAME }}
+          CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
+        run: |
+          cf api https://api.london.cloud.service.gov.uk
+          cf auth
+          cf target -o national-lottery-heritage-fund -s sandbox
+          cf v3-apply-manifest -f manifest.yml
+          cf v3-zdt-push nlhf-prototype --wait-for-deploy-complete

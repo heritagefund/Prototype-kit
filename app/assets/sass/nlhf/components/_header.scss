@@ -1,0 +1,10 @@
+.nlhf-header {
+    background: $nlhf-colour-blue;
+    padding: 20px 0;
+    &__title {
+        color: #fff;
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}

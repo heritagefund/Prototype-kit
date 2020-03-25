@@ -1,16 +1,51 @@
 // The unbranded stylesheet is used if you need to create pages in your
 // prototype without the GOV.UK branding.
 //
-// See localhost:3000/docs/templates/blank-unbranded
+// See localhost:3000/docs/examples/blank-unbranded
 
-// Import settings first so we can override them before importing all of GOV.UK Frontend
-// If you need to enable compatibility mode or the legacy palette, do that *before* this import.
-@import "node_modules/govuk-frontend/govuk/settings/all";
+@import 'nlhf/nlhf.settings';
 
-// Override the default GOV.UK Frontend font stack
-$govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+// Import colour palette and applied colours so that we can use
+// $govuk-body-background-colour in our overrides below.
+//
+// If you need to enable compatibility mode or the legacy palette, do that
+// *before* these imports.
+@import 'node_modules/govuk-frontend/govuk/settings/colours-palette';
+@import 'node_modules/govuk-frontend/govuk/settings/colours-applied';
 
-// Override the canvas background colour, which is normally grey to blend with the GOV.UK footer.
+// Style links and paragraphs by default
+$govuk-global-styles: true;
+
+// Override the govuk-frontend font stack
+$govuk-font-family: 'HelveticaNeue', 'Helvetica Neue', 'Arial', 'Helvetica',
+  sans-serif;
+
+// Override the canvas background colour, which is normally grey to blend with
+// the GOV.UK footer.
 $govuk-canvas-background-colour: $govuk-body-background-colour;
 
-@import "application";
+@import 'node_modules/govuk-frontend/govuk/all';
+
+// Patterns that aren't in Frontend
+@import 'patterns/step-by-step-nav';
+@import 'patterns/task-list';
+@import 'patterns/related-items';
+
+// Components that aren't in Frontend
+@import 'components/cookie-banner';
+@import 'patterns/layout-index';
+@import 'components/figure';
+@import 'components/autocomplete';
+@import 'components/column-image';
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+// the following files with augment or override the govuk styles
+@import 'nlhf/patterns/related-items';
+@import 'nlhf/components/header';
+@import 'nlhf/components/phase-banner';
+@import 'nlhf/helpers/showhide-responsive';
+
+.js-enabled select[data-source] {
+  display: none;
+}
