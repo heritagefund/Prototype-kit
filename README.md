@@ -11,13 +11,3 @@ This code is based on the [GOV.UK Prototype Kit](https://govuk-prototype-kit.her
 ### Installing the prototype on your machine (locally)
 
 To install this prototype follow the guidance on the [GOVUK Prototype Kit documentation](https://govuk-prototype-kit.herokuapp.com/docs/install/requirements.md)
-
-### Creating a new Government as a Platform App
-
-We are using the GOV.UK Platform as a Service to host our prototypes, if you need to create a new prototype read their [documentation for creating an application](https://docs.cloud.service.gov.uk/before_you_start.html#before-you-start)
-
-To set environment variables for the basic auth [an example command](https://cli.cloudfoundry.org/en-US/cf/set-env.html) is:
-
-```
-cf set-env APP_NAME USERNAME admin
-```
