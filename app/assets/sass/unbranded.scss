@@ -24,18 +24,12 @@ $govuk-font-family: 'HelveticaNeue', 'Helvetica Neue', 'Arial', 'Helvetica',
 // the GOV.UK footer.
 $govuk-canvas-background-colour: $govuk-body-background-colour;
 
-@import 'node_modules/govuk-frontend/govuk/all';
-
-// Patterns that aren't in Frontend
-@import 'patterns/step-by-step-nav';
-@import 'patterns/task-list';
-@import 'patterns/related-items';
+@import 'application';
 
 // Components that aren't in Frontend
 @import 'components/cookie-banner';
 @import 'patterns/layout-index';
 @import 'components/figure';
-@import 'components/autocomplete';
 @import 'components/column-image';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
@@ -45,7 +39,3 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 @import 'nlhf/components/header';
 @import 'nlhf/components/phase-banner';
 @import 'nlhf/helpers/showhide-responsive';
-
-.js-enabled select[data-source] {
-  display: none;
-}
