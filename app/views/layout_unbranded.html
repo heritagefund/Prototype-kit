@@ -1,6 +1,6 @@
 {#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
 {%- set assetPath = '/govuk/assets' -%}
-{%- set bodyClasses = prototypeVersion -%}
+{%- set bodyClasses = bodyClasses | d('') + 'prototype-' + prototypeVersion | d('') -%}
 
 {% extends "layout.html" %}
 
@@ -30,6 +30,8 @@
 {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
 {% from "govuk/components/warning-text/macro.njk"     import govukWarningText %}
 
+{% block body_classes %}{{ bodyClasses }}{% endblock %}
+
 {% block headIcons %}
   <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon"/>
   <link rel="mask-icon" href="{{ asset_path }}images/gov.uk_logotype_crown.svg?0.18.3" color="#0b0c0c">
@@ -44,9 +46,11 @@
 {% endblock %}
 
 {% block header %}
-  <div class="nlhf-header">
+  <div class="nlhf-header-global">
     <div class="govuk-width-container">
-      <p class="nlhf-header__title">National Lottery Heritage Fund</p>
+        <div class="nlhf-header-global__logo">
+            <img src="/public/images/logo.svg" alt="National Lottery Heritage Fund">
+        </div>
     </div>
   </div>
   <!-- /.govuk-width-container -->
