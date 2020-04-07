@@ -31,9 +31,11 @@ module.exports = {
   useHttps: 'true',
 
   // Cookie warning - update link to service's cookie page.
-  cookieText: 'This is a test site – if you’ve arrived at this page by mistake, go to <a href="https://www.heritagefund.org.uk">heritagefund.org.uk</a>',
+  cookieText:
+    'This is a test site – if you’ve arrived at this page by mistake, go to <a href="https://www.heritagefund.org.uk">heritagefund.org.uk</a>',
 
   // Enable or disable Browser Sync
-  useBrowserSync: 'true'
+  useBrowserSync: 'true',
 
+  useVersionCSS: 'false',
 }

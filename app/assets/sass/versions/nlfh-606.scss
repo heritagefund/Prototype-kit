@@ -1,0 +1,150 @@
+// ----------------------------------------------------------------------------
+// this imports global styles
+@import '../unbranded';
+// ----------------------------------------------------------------------------
+// version specific css overrides or new styles beneath this line
+// ----------------------------------------------------------------------------
+
+.nlhf-summary {
+    border: 4px solid #000;
+    &__header {
+        background: #000;
+        color: #fff;
+        padding: 1.25em 1em;
+        display: block;
+        .govuk-heading-l,
+        .govuk-heading-m {
+            color: inherit;
+            margin: -4px 0 0 0;
+            padding: 0;
+            vertical-align: top;
+        }
+    }
+    &__body {
+        padding: 1rem;
+    }
+}
+
+.nlhf-data-row {
+    display: flex;
+    align-items: center;
+    &:not(:last-of-type) {
+        margin-bottom: 1.25rem;
+        border-bottom: 2px dashed #ccc;
+    }
+    &__heading {
+        margin: 0 0 0.15em 0;
+    }
+}
+
+.nlhf-data-row__group {
+    &--a {
+        @include govuk-media-query($until: desktop) {
+            width: 60%;
+        }
+        @include govuk-media-query($from: desktop) {
+            width: 75%;
+        }
+    }
+    &--b {
+
+        .nlhf-data-row__heading {
+            text-align: right;
+        }
+        @include govuk-media-query($until: desktop) {
+            width: 40%;
+        }
+        @include govuk-media-query($from: desktop) {
+            width: 25%;
+        }
+    }
+}
+
+.nlhf-data-row--files {
+    align-items: center;
+    justify-content: space-between;
+    .nlhf-data-row__group {
+        max-width: 50%;
+        &:last-of-type {
+            word-break: break-all;
+            text-align: right;
+        }
+    }
+    &:last-of-type {
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.nlhf-grant-summary {
+    p:last-child {
+        margin-bottom: 0;
+    }
+    &__item {
+        display: flex;
+        padding: govuk-spacing(4);
+        background: govuk-colour("light-grey");
+        &:not(:last-of-type) {
+            margin-bottom: 2px;
+        }
+        &--calc {
+            display: block;
+            p{
+            width: 100%;
+            }
+        }
+    }
+    &__description {
+        width: 70%;
+    }
+    &__amount {
+        width: 30%;
+        align-self: flex-start;
+        text-align: right;
+        p {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+.nlhf-summary {
+    margin-bottom: govuk-spacing(3);
+    &__total {
+        // border: 3px solid #000;
+        // padding: 1rem;
+        text-align: right;
+        &__title {
+            font-family: $govuk-font-family;
+            margin: 0;
+            &-text {
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: .75em;
+                font-size: 1.5rem;
+            }
+            &-val {
+                font-size: 2.5rem;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+.nlhf-add-item {
+    &__header {
+        border-bottom: 1px solid #ccc;
+        padding: 0 0 1rem 0;
+        margin: 0 0 1rem 0;
+        &__title {
+            margin: 0;
+        }
+    }
+}
+
+.nlhf-highlight-content {
+    border: 1px solid  $govuk-border-colour;
+    padding: govuk-spacing(4);
+    margin: 0 0 govuk-spacing(5) 0;
+}

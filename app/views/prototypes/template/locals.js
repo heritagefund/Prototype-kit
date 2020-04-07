@@ -1,3 +1,4 @@
 module.exports = {
-  debugMode: true
-};
+  debugMode: true,
+  useVersionCSS: 'true',
+}

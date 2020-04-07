@@ -42,7 +42,13 @@
 {% endblock %}
 
 {% block head %}
-  <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css">
+  {# should the version of the prototype use it's own CSS file? #}
+  {% if useVersionCSS == 'true' %}
+    {{ ('Styles are being generated from: ' + prototypeVersion + '.scss file in /app/assets/sass/versions/') | log }}
+    <link href="/public/stylesheets/{{ prototypeVersion }}.css" media="all" rel="stylesheet" type="text/css">
+  {% else %}
+    <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css">
+  {% endif %}
 {% endblock %}
 
 {% block header %}

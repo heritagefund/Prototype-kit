@@ -3,7 +3,7 @@
 //
 // See localhost:3000/docs/examples/blank-unbranded
 
-@import 'nlhf/nlhf.settings';
+@import 'prototype/prototype.settings';
 
 // Import colour palette and applied colours so that we can use
 // $govuk-body-background-colour in our overrides below.
@@ -24,9 +24,10 @@ $govuk-font-family: 'HelveticaNeue', 'Helvetica Neue', 'Arial', 'Helvetica',
 // the GOV.UK footer.
 $govuk-canvas-background-colour: $govuk-body-background-colour;
 
+// this is the default govuk set of styles from GOVUK Frontend
 @import 'application';
 
-// Components that aren't in Frontend
+// Components that aren't in GOVUK Frontend
 @import 'components/cookie-banner';
 @import 'patterns/layout-index';
 @import 'components/figure';
@@ -34,8 +35,5 @@ $govuk-canvas-background-colour: $govuk-body-background-colour;
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
-// the following files with augment or override the govuk styles
-@import 'nlhf/patterns/related-items';
-@import 'nlhf/components/header';
-@import 'nlhf/components/phase-banner';
-@import 'nlhf/helpers/showhide-responsive';
+// this is the prototype specific set of global styles (used across all prototype 'versions')
+@import 'prototype/prototype.imports';
