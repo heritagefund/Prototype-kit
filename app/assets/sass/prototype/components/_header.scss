@@ -1,6 +1,9 @@
-.nlhf-header {
-    background: $nlhf-colour-blue;
+.nlhf-header-global {
+    background: $nlhf-colour--blue;
     padding: 20px 0;
+    &__logo {
+      width: 150px;
+    }
     &__title {
         color: #fff;
         margin: 0;

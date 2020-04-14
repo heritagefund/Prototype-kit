@@ -1,0 +1,9 @@
+.nlhf-footer-global {
+  $_footer-background: $nlhf-colour--light-grey;
+  $_footer-border: $nlhf-colour--mid-grey;
+  background: $_footer-background;
+  // border-top: 1px solid $_footer-border;
+  &__copyright-link {
+      text-decoration: none;
+  }
+}

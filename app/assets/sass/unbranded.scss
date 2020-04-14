@@ -3,8 +3,6 @@
 //
 // See localhost:3000/docs/examples/blank-unbranded
 
-@import 'prototype/prototype.settings';
-
 // Import colour palette and applied colours so that we can use
 // $govuk-body-background-colour in our overrides below.
 //
@@ -12,6 +10,8 @@
 // *before* these imports.
 @import 'node_modules/govuk-frontend/govuk/settings/colours-palette';
 @import 'node_modules/govuk-frontend/govuk/settings/colours-applied';
+
+@import 'prototype/prototype.settings';
 
 // Style links and paragraphs by default
 $govuk-global-styles: true;

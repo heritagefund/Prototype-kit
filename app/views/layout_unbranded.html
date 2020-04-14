@@ -1,6 +1,7 @@
 {#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
 {%- set assetPath = '/govuk/assets' -%}
 {%- set bodyClasses = bodyClasses | d('') + 'prototype-' + prototypeVersion | d('') -%}
+{%- set htmlClasses = htmlClasses | d('') + 'nlhf-template' -%}
 
 {% extends "layout.html" %}
 
@@ -34,17 +35,12 @@
 
 {% block headIcons %}
   <link rel="shortcut icon" href="{{ asset_path }}images/unbranded.ico?0.18.3" type="image/x-icon"/>
-  <link rel="mask-icon" href="{{ asset_path }}images/gov.uk_logotype_crown.svg?0.18.3" color="#0b0c0c">
-  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ asset_path }}images/apple-touch-icon-152x152.png?0.18.3">
-  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ asset_path }}images/apple-touch-icon-120x120.png?0.18.3">
-  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{ asset_path }}images/apple-touch-icon-76x76.png?0.18.3">
-  <link rel="apple-touch-icon-precomposed" href="{{ asset_path }}images/apple-touch-icon-60x60.png?0.18.3">
 {% endblock %}
 
 {% block head %}
   {# should the version of the prototype use it's own CSS file? #}
   {% if useVersionCSS == 'true' %}
-    {{ ('Styles are being generated from: ' + prototypeVersion + '.scss file in /app/assets/sass/versions/') | log }}
+    {{ ('Styles are being generated from: ' + prototypeVersion + '.scss file in /app/assets/sass/versions/') | log if debugMode }}
     <link href="/public/stylesheets/{{ prototypeVersion }}.css" media="all" rel="stylesheet" type="text/css">
   {% else %}
     <link href="/public/stylesheets/unbranded.css" media="all" rel="stylesheet" type="text/css">
@@ -62,7 +58,11 @@
   <!-- /.govuk-width-container -->
 {% endblock %}
 
-{% block footer %}{% endblock %}
+{% block footer %}
+  <div class="nlhf-footer-global">
+    <p>I'm a footer</p>
+  </div>
+{% endblock %}
 
 {% block bodyEnd %}
   {% include "includes/scripts.html" %}

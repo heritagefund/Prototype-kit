@@ -1,2 +1,6 @@
-$nlhf-colour-blue: #005565;
-$govuk-brand-colour: $nlhf-colour-blue;
+$nlhf-colour--blue: #005565 !default;
+$nlhf-colour--light-grey: #F3F6F7;
+$nlhf-colour--mid-grey: darken(#F3F6F7,15);
+
+// doing this overrides the GOVUK colour where it is used because declared as a default;
+$govuk-brand-colour: $nlhf-colour--blue;
