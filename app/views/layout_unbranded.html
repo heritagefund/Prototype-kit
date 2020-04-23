@@ -51,7 +51,7 @@
   <div class="nlhf-header-global">
     <div class="govuk-width-container">
         <div class="nlhf-header-global__logo">
-            <img src="/public/images/logo.svg" alt="National Lottery Heritage Fund">
+            <a href="/"><img src="/public/images/logo.svg" alt="National Lottery Heritage Fund"></a>
         </div>
     </div>
   </div>
@@ -59,9 +59,17 @@
 {% endblock %}
 
 {% block footer %}
-  <div class="nlhf-footer-global">
-    <p>I'm a footer</p>
+<footer class="govuk-footer nlhf-footer" role="contentinfo">
+  <div class="govuk-width-container">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        <div class="govuk-footer__meta-custom">
+          © Trustees of the National Heritage Memorial Fund
+        </div>
+      </div>
+    </div>
   </div>
+</footer>
 {% endblock %}
 
 {% block bodyEnd %}
