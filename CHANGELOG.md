@@ -1,3 +1,46 @@
+# Unreleased
+
+# 9.9.0 (Feature release)
+
+## New features
+
+- [Pull request #908: Update to GOV.UK Frontend v3.8.0](https://github.com/alphagov/govuk-prototype-kit/pull/919)
+
+## Fixes
+
+- [Pull request #913: Fix security issue when running on Glitch](https://github.com/alphagov/govuk-prototype-kit/pull/913)
+
+# 9.8.0 (Feature release)
+
+## New features
+
+### Updated task list template
+
+The task list pattern has been updated to make incomplete tasks clearer to users. This change [has also been made to the pattern in the Design System](https://design-system.service.gov.uk/patterns/task-list-pages/).
+
+If you're updating from an older version, in your `app/assets/sass/patterns/task-list.scss` file add the line `.app-task-list__tag,` before `.app-task-list__task-completed {`:
+
+```scss
+.app-task-list__tag,
+.app-task-list__task-completed {
+```
+
+This was added in [pull request #907: Update Task List template](https://github.com/alphagov/govuk-prototype-kit/pull/907)
+
+# 9.7.0 (Feature release)
+
+## New features
+
+- [Pull request #901: Add support for Node v14](https://github.com/alphagov/govuk-prototype-kit/pull/901)
+- [Pull request #908: Update to GOV.UK Frontend v3.7.0](https://github.com/alphagov/govuk-prototype-kit/pull/908)
+
+# 9.6.1 (Patch release)
+
+## Fixes
+
+- [Pull request #884: Bump nunjucks from v3.1.3 to v3.2.1](https://github.com/alphagov/govuk-prototype-kit/pull/884)
+- [Pull request #885: Update various dependencies and fix linting offences](https://github.com/alphagov/govuk-prototype-kit/pull/885)
+
 # 9.6.0 (Feature release)
 
 ## New features
